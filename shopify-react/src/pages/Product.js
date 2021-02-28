@@ -22,7 +22,15 @@ const Product = () => {
         <Container>
             <Row m={{ b: "2rem" }} p="2rem">
                 <Col>
-                    <Div bgImg={product.images[0].src} shadow="3" bgSize="cover" w="100%" bgPos="center center" h="40rem"/>
+                    <Div 
+                        bgImg={product.images[0].src} 
+                        shadow="3" 
+                        bgSize="cover" 
+                        w="100%" 
+                        bgPos="center center" 
+                        h="40rem"
+                        rounded="sm"
+                    />
                 </Col>
                 <Col>
                     <Text tag="h1" textColor="black500" textWeight="200" m={{ y: '2rem' }}>{product.title}</Text>

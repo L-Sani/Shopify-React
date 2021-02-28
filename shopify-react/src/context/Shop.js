@@ -4,8 +4,9 @@ import Client from 'shopify-buy';
 const ShopContext = React.createContext()
 
 const client = Client.buildClient({
-    storefrontAccessToken: "dd4d4dc146542ba7763305d71d1b3d38",
-    domain: "graphql.myshopify.com",
+    //Credentials for Shopify account
+    storefrontAccessToken: "d961d1aeda692215b6de02c7b4a8f570",
+    domain: "sanisneakerheads.myshopify.com",
 });
 
 class ShopProvider extends Component {
@@ -21,12 +22,12 @@ class ShopProvider extends Component {
         //Check if localStorage has a checkout_id saved
         //if there is no checkout_id in localStorage then we will create a new checkout
 
-        if (localStorage.checkout) {
-            this.fetchCheckout(localStorage.checkout);
+        // if (localStorage.checkout) {
+        //     this.fetchCheckout(localStorage.checkout);
             
-        } else {
+        // } else {
             this.createCheckout();
-        }
+        // }
 
     }
 

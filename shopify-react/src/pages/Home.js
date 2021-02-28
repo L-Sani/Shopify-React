@@ -20,7 +20,7 @@ const Home = () => {
         <Container>
             <Row>
                 {products.map(product => (
-                    <Col key={product.id} size="3" >
+                    <Col key={product.id} size="4" >
                         <Link to={`/product/${product.id}`} style={{ textDecoration: 'none' }}>
                             <Div p="2rem">
                                 <Div 
@@ -32,6 +32,7 @@ const Home = () => {
                                     hoverShadow="4"
                                     transition="0.3s"
                                     m={{ b: "1.5rem" }}
+                                    rounded="sm"
                                     >
                                 </Div>
                                 <Text tag="h1" textWeight="300" textSize="subheader" textDecor="none" textColor="black500">{product.title}</Text>
