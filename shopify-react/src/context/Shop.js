@@ -22,12 +22,12 @@ class ShopProvider extends Component {
         //Check if localStorage has a checkout_id saved
         //if there is no checkout_id in localStorage then we will create a new checkout
 
-        // if (localStorage.checkout) {
-        //     this.fetchCheckout(localStorage.checkout);
+        if (localStorage.checkout) {
+            this.fetchCheckout(localStorage.checkout);
             
-        // } else {
+        } else {
             this.createCheckout();
-        // }
+        }
 
     }
 
