@@ -4,8 +4,8 @@ import { Text, Div, Row, Col, SideDrawer, Container, Anchor, Icon, Button } from
 
 const Cart = () => {
 
-    const { isCartOpen, closeCart, checkout } = useContext(ShopContext)
-
+    const { isCartOpen, closeCart, checkout, removeItemFromCheckout } = useContext(ShopContext)
+console.log(checkout.lineItems);
     if (checkout.lineItems) {
         return (
             <SideDrawer isOpen={isCartOpen} onClose={closeCart}>
@@ -33,6 +33,23 @@ const Cart = () => {
                                         </Col>
                                         <Col>
                                             <Text>{item.variant.price}</Text>
+                                            <Button
+                                                h="2rem"
+                                                p={{ x: "0.75rem" }}
+                                                m={{ y: '1rem' }}
+                                                textSize="caption"
+                                                hoverTextColor="info900"
+                                                bg="danger800"
+                                                hoverBg="info200"
+                                                border="1px solid"
+                                                borderColor="white"
+                                                hoverBorderColor="info900"
+                                                
+                                                onClick={() => removeItemFromCheckout(item.id)}
+                                            >
+                                                Remove
+                                            </Button>
+
                                         </Col>
                                     </Row>
                                 ))}

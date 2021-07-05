@@ -57,6 +57,15 @@ class ShopProvider extends Component {
 
         this.openCart();
     }
+    
+    removeItemFromCheckout = async (variantId) => {
+        const lineItemIdsToRemove = [ variantId ];
+
+        const checkout = await client.checkout.removeLineItems(this.state.checkout.id, lineItemIdsToRemove);
+        this.setState({ checkout: checkout });
+
+        this.closeCart();
+    }
 
     fetchAllProducts = async () => {
         const products  = await client.product.fetchAll()
@@ -82,7 +91,8 @@ class ShopProvider extends Component {
                 fetchProductWithId: this.fetchProductWithId,
                 closeCart: this.closeCart,
                 openCart: this.openCart,
-                addItemToCheckout: this.addItemToCheckout
+                addItemToCheckout: this.addItemToCheckout,
+                removeItemFromCheckout: this.removeItemFromCheckout
             }}>
                 {this.props.children}
             </ShopContext.Provider>
